@@ -1,0 +1,84 @@
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Создание колонок с минимальной шириной 200px и равной шириной */
+    grid-gap: 20px; /* Расстояние между карточками */
+}
+
+.card {
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #236555;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 24px; /* Увеличьте размер шрифта по вашему вкусу */
+    font-family: Arial, sans-serif; /* Выберите желаемый шрифт */
+    color: #0e0e0e; /* Установите черный цвет текста */
+}
+
+
+.card:hover {
+    background-color: rgba(173, 201, 218, 0.98);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card p {
+    margin-top: 10px;
+}
+
+
+
+.header {
+    background-color: #00a1db; /* Голубой фон */
+    display: flex;
+    align-items: center; /* Центрирование по вертикали */
+    padding: 10px;
+}
+
+.logo {
+    width: 50px; /* Ширина логотипа */
+    height: auto; /* Автоматическая высота логотипа */
+    margin-right: 10px; /* Отступ между логотипом и заголовком */
+}
+
+.title {
+    font-size: 24px; /* Размер шрифта заголовка */
+    color: white; /* Цвет текста заголовка */
+}
+.background {
+    background-image: url("{% static 'images/background2.png' %}");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* В вашем CSS-файле (main1.css) */
+.no-underline-link {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #152d11; /* Черный цвет текста */
+    font-weight: bold; /* Жирный шрифт */
+    font-family: 'Arial', sans-serif; /* Используем Arial или другой выбранный шрифт */
+    font-size: 26px; /* Изменяем размер шрифта по вашему вкусу */
+}
+
+    .header {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-form {
+           margin-left: auto;/*  Перемещение формы в правый угол */
+            display: flex; /* Для размещения поля поиска и кнопки на одной линии */
+            /*position: absolute;
+            top: 5%;
+            left: 40%;*/
+
+        }
+
+        .search-form input[type="text"] {
+            margin-right: 10px; /* Расстояние между полем поиска и кнопкой */
+        }

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+{% block title %}Заказ №{{ data.id }}{% endblock %}
+
+{% block content %}
+
+      <div class="order-text">
+
+<div class="card-container">
+    <div class="card">
+        <img src="{% static data.image %}" alt="{{ data.title }}">
+        <h2>{{ data.title }}</h2>
+        <p>{{ order.worker }}</p>
+        <p>{{ data.info }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
