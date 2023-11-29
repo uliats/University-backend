@@ -3,31 +3,66 @@
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Создание колонок с минимальной шириной 200px и равной шириной */
     grid-gap: 20px; /* Расстояние между карточками */
 }
-
 .card {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
     padding: 10px;
     text-align: center;
     border: 2px solid #236555;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-size: 24px; /* Увеличьте размер шрифта по вашему вкусу */
-    font-family: Arial, sans-serif; /* Выберите желаемый шрифт */
-    color: #0e0e0e; /* Установите черный цвет текста */
-}
-
-
-.card:hover {
-    background-color: rgba(173, 201, 218, 0.98);
-}
-
-.card img {
-    max-width: 100%;
-    height: auto;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    color: #0e0e0e;
 }
 
 .card p {
     margin-top: 10px;
+}
+
+.card p.name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #236555;
+}
+
+.card p.expert-label {
+    font-size: 20px;
+    color: #000000;
+    display: inline-block;
+    align-self: flex-start; /* Прикрепляем слева внутри контейнера */
+    margin-right: 10px;
+}
+
+.card p.description {
+    font-size: 17px;
+    color: #000000;
+}
+
+.card__check {
+    color: #ffffff;
+    background-color: #00a1db;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: auto;
+}
+
+.card__check:hover {
+    background-color: #78b6d5;
+}
+
+/*.card:hover {*/
+/*    background-color: rgb(181, 218, 236);*/
+/*}*/
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    margin-top: auto; /* Размещаем изображение внизу контейнера */
 }
 
 
@@ -56,12 +91,9 @@
     background-size: cover;
 }
 
-/* В вашем CSS-файле (main1.css) */
+
 .no-underline-link {
     text-decoration: none; /* Убираем подчеркивание */
-    color: #152d11; /* Черный цвет текста */
-    font-weight: bold; /* Жирный шрифт */
-    font-family: 'Arial', sans-serif; /* Используем Arial или другой выбранный шрифт */
     font-size: 26px; /* Изменяем размер шрифта по вашему вкусу */
 }
 

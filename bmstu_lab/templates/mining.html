@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+{% block title %}Список услуг{% endblock %}
+
+{% block content1 %}
+  <form method="GET" action="{% url 'minings' %}" enctype="multipart/form-data" class="search-form">
+    {% csrf_token %}
+    <input name="query_minings" type="text" placeholder="Поиск" value="{{ search_value }}">
+    <button type="submit" class="search-button">
+      <img src="{% static 'images/search-icon.png' %}" alt="Поиск" class="logo">
+    </button>
+  </form>
+{% endblock %}
+
+{% block content %}
+
+  <h2>Список услуг:</h2>
+  <div class="card-container">
+    {% for minings in filtered_data %}
+        <div class="card">
+            <a href="{% url 'mining_url' id=minings.idservice %}" class="no-underline-link">
+            <p class="name">{{ minings.nameservice }}</p>
+            <p class="expert-label">{{ minings.expert }}</p>
+            <p class="description">{{ minings.description }}</p>
+            <img class="img" src="{% static 'images/' %}{{ minings.idservice }}.jpg" alt="Изображение {{ minings.idservice }}" id="image{{ minings.idservice }}">
+            </a>
+            <a href="{% url 'delete_mining' id=minings.idservice %}" class="card__check">Удалить</a>
+
+            <script>
+                console.log("ID:", {{ minings.idservice }});
+            </script>
+        </div>
+    {% endfor %}
+</div>
+
+  {# Если у вас нет данных для отображения, выведите соответствующее сообщение #}
+  {% if filtered_data.count == 0 %}
+    <li>Ничего не найдено</li>
+  {% endif %}
+{% endblock %}

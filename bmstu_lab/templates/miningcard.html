@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Заказ №{{ minings.idservice }}{% endblock %}
+
+{% block content %}
+    <div class="order-text">
+        <div class="card-container">
+            <div class="card">
+
+                <img src="{% static minings.image %}" alt="{{ minings.title }}">
+                <p class="name">{{ minings.nameservice }}</p>
+        <p class="expert-label">{{ minings.expert }}</p>
+        <p class="description">{{ minings.description }}</p>
+                 <img src="{% static 'images/' %}{{ minings.idservice }}.jpg" alt="Изображение {{ minings.idservice }}" id="image{{ minings.idservice }}">
+            </div>
+        </div>
+    </div>
+{% endblock %}

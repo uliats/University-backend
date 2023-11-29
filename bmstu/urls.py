@@ -19,10 +19,13 @@ from django.urls import path
 
 from bmstu_lab import views
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('', views.GetOrders),
-    path('order/<int:id>/', views.GetOrder, name='order_url'),
-    path('', views.sendText, name='sendText'),
+    path('', views.GetMinings, name='minings'),
 
+    path('minings/<int:id>/', views.GetMining, name='mining_url'),
+
+    path("delete_mining/<int:id>/", views.delete_mining, name='delete_mining'),
 ]
