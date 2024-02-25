@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Список услуг{% endblock %}
+
+{% block content1 %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<form method="GET" action="{% url 'services' %}" enctype="multipart/form-data" class="search-form">
+  {% csrf_token %}
+  <input name="query_service" type="text" placeholder="Поиск" value="{{ search_value }}">
+  <button type="submit" class="search-button">
+    <img src="{% static 'images/search-icon.png' %}" alt="Поиск" class="logo">
+  </button>
+</form>
+</br>
+<div class="card">
+    <a href="{% url 'cart' %}" class="no-underline-link">
+      <p class="name">Корзина</p>
+      <!-- Add any additional styling for the "Cart" card here -->
+    </a>
+</div>
+{% endblock %}
+
+{% block content %}
+<h2>Список услуг:</h2>
+<div class="card-container">
+  {% for service in filtered_services %}
+  <div class="card">
+{#    <a href="{% url 'service' id=service.id %}" class="no-underline-link">#}
+      <p class="name">{{ service.name }}</p>
+      <p class="expert-label">{{ service.expert }}</p>
+{#      <p class="description">{{ service.description }}</p>#}
+      <img src="{% static 'images/' %}{{ service.id }}.jpg" alt="Изображение {{ service.id }}" id="image{{ service.id }}">
+
+      <div class="card__actions">
+        <a href="{% url 'delete_service' id=service.id %}" class="card__check">Удалить</a>
+        <a href="{% url 'add_to_cart' id=service.id %}" class="card__check">Добавить в корзину</a>
+        <a href="{% url 'service' id=service.id %}" class="card__check">Подробнее</a>
+      </div>
+{#    </a>#}
+    <script>
+      console.log("ID:", {{ service.id }});
+    </script>
+  </div>
+  {% empty %}
+  <p>Ничего не найдено</p>
+  {% endfor %}
+</div>
+{% endblock %}

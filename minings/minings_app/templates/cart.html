@@ -1,0 +1,32 @@
+<!-- cart.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Корзина{% endblock %}
+
+{% block content %}
+  <h2>Корзина</h2>
+
+  {% if draft_order %}
+    <p>Номер заказа: {{ draft_order.id }}</p>
+    <p>Статус: Черновик</p>
+    <p>Дата создания: {{ draft_order.date_created }}</p>
+
+    <h3>Список услуг:</h3>
+    <ul>
+      {% for service in draft_order.services.all %}
+        <li>{{ service.name }}</li>
+      {% endfor %}
+    </ul>
+
+    <!-- Кнопка для очистки корзины -->
+    <form action="{% url 'clear_cart' %}" method="post">
+      {% csrf_token %}
+      <button type="submit" class="delete-button">Очистить корзину</button>
+    </form>
+
+  {% else %}
+    <p>Корзина пуста</p>
+  {% endif %}
+{% endblock %}

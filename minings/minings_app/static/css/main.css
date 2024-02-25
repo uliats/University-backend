@@ -1,0 +1,159 @@
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Уменьшаем минимальную ширину карточек и изменяем количество карточек в строке */
+    grid-gap: 20px; /* Расстояние между карточками */
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.94); /* Прозрачный белый фон */
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+    /*border: 2px solid #236555;*/
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 20px; /* Уменьшаем размер шрифта карточек */
+    font-family: Arial, sans-serif;
+    color: #0e0e0e;
+}
+
+.card:hover {
+    transform: scale(0.95); /* Уменьшение размера при наведении */
+
+}
+
+.card p.name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000; /* Цвет названия черный */
+}
+
+.card p.expert-label {
+    font-size: 20px;
+    color: #00a1db; /* Цвет экспертного заголовка голубой */
+    font-weight: bold;
+}
+
+.card p.description {
+    font-size: 17px;
+    color: #000000;
+}
+
+
+.card p {
+    margin-top: 10px;
+}
+
+.card__actions a:nth-child(1) {
+    background-color: #ef6868; /* Устанавливаем цвет фона для первой ссылки */
+}
+
+.card__actions a:nth-child(2) {
+    background-color: #43c093; /* Устанавливаем цвет фона для второй ссылки */
+}
+
+.card__actions a:nth-child(3) {
+    background-color: #00a1db; /* Устанавливаем цвет фона для третьей ссылки */
+}
+
+
+.card__actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__actions a {
+    font-size: 15px;
+    color: #ffffff;
+    background-color: rgba(48, 156, 215, 0.98);
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 5px; /* Добавляем правый отступ между ссылками */
+}
+
+.card__actions a:hover {
+    background-color: #00a1db;
+}
+
+
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    margin-top: auto;
+    border-radius: 10px;
+    margin-bottom: 10px; /* Отступ внизу изображения */
+}
+
+
+
+.header {
+    background-color: rgb(0, 161, 219); /* Голубой фон */
+    display: flex;
+    align-items: center; /* Центрирование по вертикали */
+    padding: 10px;
+}
+.logo {
+    width: 50px; /* Ширина логотипа */
+    height: auto; /* Автоматическая высота логотипа */
+    margin-right: 10px; /* Отступ между логотипом и заголовком */
+}
+
+.title {
+    font-size: 24px; /* Размер шрифта заголовка */
+    color: white; /* Цвет текста заголовка */
+}
+
+.background {
+    background-color: rgba(255, 255, 255, 0.5); /* Белый цвет с прозрачностью 0.5 */
+    background-image: url("{% static 'images/default.jpg' %}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5; /* Прозрачность изображения */
+}
+
+
+.no-underline-link {
+    text-decoration: none; /* Убираем подчеркивание */
+    font-size: 26px; /* Изменяем размер шрифта по вашему вкусу */
+}
+
+.search-form {
+    margin-left: auto; /* Перемещение формы в правый угол */
+    display: flex; /* Для размещения поля поиска и кнопки на одной линии */
+}
+
+.search-form input[type="text"] {
+    margin-right: 10px; /* Расстояние между полем поиска и кнопкой */
+}
+.notification {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: yellow;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 9999;
+}
+.delete-button {
+  background-color: #ef6868; /* Красный цвет фона */
+  color: #ffffff; /* Белый цвет текста */
+  border: none; /* Убираем границу */
+  padding: 15px 30px; /* Поля внутри кнопки */
+  border-radius: 5px; /* Закругленные углы */
+  cursor: pointer; /* Изменяем курсор при наведении */
+  transition: background-color 0.3s; /* Плавное изменение цвета при наведении */
+  font-size: 18px; /* Увеличиваем размер текста */
+}
+
+
+.delete-button:hover {
+  background-color: #ef6868; /* Изменяем цвет фона при наведении */
+}

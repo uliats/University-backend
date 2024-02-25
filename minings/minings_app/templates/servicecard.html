@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Заказ №{{ service.id }}{% endblock %}
+
+{% block content %}
+    <div class="order-text">
+        <div class="card-container">
+            <div class="card">
+                <img src="{{ service.image.url }}" alt="{{ service.name }}">
+                <p class="name">{{ service.name }}</p>
+                <p class="expert-label">{{ service.expert }}</p>
+                <p class="description">{{ service.description }}</p>
+                <img src="{% static 'images/' %}{{ service.id }}.jpg" alt="Изображение {{ service.id }}" id="image{{ service.id }}">
+            </div>
+        </div>
+    </div>
+{% endblock %}
